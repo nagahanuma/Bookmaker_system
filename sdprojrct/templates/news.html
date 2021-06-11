@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title> News </title>
+    <link href="/static/home2css.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+  body{
+      background-image: url('news.jpg')
+  }
+
+  </style>
+
+
+<!-- Optional theme -->
+</head>
+<body style= "backgroung-colour:hotpink">
+
+
+
+		<ul>
+	    <li><a href="{% url 'home' %}">Home</a></li>
+	  	<li><a href="#contact">Contact</a></li>
+	  	<li><a href="#about">About</a></li>
+
+		</ul>
+
+
+
+
+  <div class="jumbotron" style="color:black">
+
+  <h1 style ="color:Black">
+  News on Sports
+  </h1>
+
+  </div>
+
+
+  <div class="container">
+  {% for a,b, c,d in mylist %}
+      <h1>news:</h1> {{ a }}
+      <h5>Date:</h5> {{ b }}
+      <h4>description:</h4>{{ c }}
+      <h6>Link:</h6><a href="{{ d }}">{{d}}</a>
+      {{ value|linebreaks }}
+
+  {% endfor %}
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>work</title>
+</head>
+<body>
+<h1> profile page</h1>
+{% if user.is_authenticated %}
+<h1> hello, {{user.first_name}}</h1>
+<br>
+<a href="{% url 'logout' %}"> LOGOUT</a>
+{% else %}
+<br>
+ <a href ="{% url 'login' %}"> login here</a>
+{% endif %}
+</body>
+</html>
